@@ -1,0 +1,9 @@
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
+CREATE DATABASE auth OWNER postgres;
+CREATE DATABASE profile OWNER postgres;
+CREATE DATABASE content OWNER postgres;
+CREATE DATABASE ticketing OWNER postgres;
+
+CREATE ROLE auth_svc LOGIN PASSWORD 'authpass';
+GRANT CONNECT ON DATABASE auth TO auth_svc;
